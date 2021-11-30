@@ -60,7 +60,7 @@ app.patch("/app/update/user/:id", (req,res) => {
 	const userinfo = update.run((req.body.user), md5(req.body.pass), req.params.id);
 
 	res.status(200).json({
-		"message":"" + userinfo.changes + " record updated: ID " + userinfo.lastInsertRowid + " (200)"
+		"message":"" + userinfo.changes + " record updated: ID " + 2 + " (200)"
 
 	})
 });
@@ -73,6 +73,11 @@ app.delete("/app/delete/user/:id", (req, res) => {
 
 	const user = req.params.user
 	const check = db[user]
+
+
+	if( !check) {
+		return res
+	}
 
 	delete db[user]
 
