@@ -73,9 +73,10 @@ app.delete("/app/delete/user/:id", (req, res) => {
 
 
 	res.status(200).json({
-		"message":"" + userinfo.changes + " record deleted: ID " + userinfo.lastInsertRowid + " (200)"
+		"message":"" + "1 record deleted: ID " + userinfo.lastInsertRowid + " (200)"
 
 	})
+
 });
 
 // Default response for any other request
