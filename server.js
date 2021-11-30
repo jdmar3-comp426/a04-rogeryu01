@@ -60,7 +60,7 @@ app.patch("/app/update/user/:id", (req,res) => {
 	const userinfo = update.run(req.body.user, md5(req.body.pass), req.params.id);
 
 	res.status(200).json({
-		"message":"" + userinfo.changes + " record updated: ID " + userinfo. + " (200)"
+		"message":"" + userinfo.changes + " record updated: ID " + req.params.id + " (200)"
 
 	})
 });
